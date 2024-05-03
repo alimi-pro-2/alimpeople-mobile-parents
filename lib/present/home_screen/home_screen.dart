@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +20,9 @@ class HomeScreen extends StatelessWidget {
           ),
           SizedBox(height: 300),
           TextButton(
-              onPressed: () {},
+              onPressed: () {
+                GoRouter.of(context).go("/authentication");
+              },
               child: Text(
                 '보호자 전화 인증',
                 style: TextStyle(

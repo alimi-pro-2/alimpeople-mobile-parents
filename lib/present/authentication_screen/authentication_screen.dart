@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Authentication extends StatefulWidget {
-  const Authentication({Key? key});
+class AuthenticationScreen extends StatefulWidget {
+  const AuthenticationScreen({Key? key});
 
   @override
-  _AuthenticationState createState() => _AuthenticationState();
+  _AuthenticationScreenState createState() => _AuthenticationScreenState();
 }
 
-class _AuthenticationState extends State<Authentication> {
+class _AuthenticationScreenState extends State<AuthenticationScreen> {
   bool _showList = false;
 
   List<String> items = ['🇰🇷 Korea', '🇺🇸 U.S.A', '🇯🇵 Japan'];
@@ -17,7 +17,7 @@ class _AuthenticationState extends State<Authentication> {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 80),
             Padding(
@@ -35,7 +35,7 @@ class _AuthenticationState extends State<Authentication> {
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 50),
+                padding: const EdgeInsets.only(left: 10),
                 child: ListTile(
                   title: Row(
                     children: [
@@ -59,9 +59,9 @@ class _AuthenticationState extends State<Authentication> {
                           });
                         },
                       ),
-                      SizedBox(width: 20),
+                      SizedBox(width: 5),
                       Container(
-                        width: 245,
+                        width: 200,
                         height: 33,
                         child: TextField(
                           decoration: InputDecoration(hintText: 'Phone Number'),
